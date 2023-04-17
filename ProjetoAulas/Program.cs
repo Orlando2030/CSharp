@@ -80,10 +80,56 @@ Console.WriteLine(valido2);
 bool valido3 = !(n2 > 10);
 Console.WriteLine(valido3);
 */
-
+/*
 bool ativo = true;
 string status = ativo == true ? "Cadastro Ativo": "Cadastro inativo";
 Console.WriteLine(status);
 
 string status2 = ativo != true ? "Cadastro Ativo": "Cadastro inativo";
 Console.WriteLine(status2);
+*/
+/*
+string NomeCompleto()
+{
+    string Nome1 = "Orlando";
+
+    string Nome2 = "Oliveira";
+
+    return Nome1 + " " + Nome2;
+}
+
+var Nome = NomeCompleto();
+
+Console.WriteLine(Nome);
+*/
+/*
+int SomaValores()
+{
+    int Valor1 = 1;
+    int Valor2 = 6;    
+
+    return Valor1 + Valor2;
+}
+
+var Soma = SomaValores();
+Console.WriteLine(Soma);
+*/
+
+/*
+int SomaValores (int a, int b)
+{
+    return a + b;
+}
+
+var Soma =  SomaValores(10,5);
+Console.WriteLine(Soma);
+*/
+
+
+string NomeIdade(string nome, int idade)
+{
+    return "Meu nome é " + nome + " e minha idade é " + idade;
+}
+
+var NM = NomeIdade("Orlando Santos de Oliveira",39);
+Console.WriteLine(NM);
