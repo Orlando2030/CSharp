@@ -1,135 +1,132 @@
-﻿/*
-Console.WriteLine("Primeiro Programa");
-
-int idade = 33;
-Console.WriteLine(idade);
-string nomePessoa = "Orlando"; // string aspa dupla
-Console.WriteLine(nomePessoa);
-decimal valor = 299.99m;
-double valorDouble = 299.99;
-float valorFloat = 299.99f;
-Console.WriteLine(valor);
-Console.WriteLine(valorDouble);
-Console.WriteLine(valorFloat);
-
-var idadeNova = 34f;
-
-
-char flag = 'Y'; // char aspa simples
-Console.WriteLine(flag);
-
-bool ativo = true;
-Console.WriteLine(ativo);
-
-const string descricao = "Curso CSharp";
-Console.WriteLine(descricao);
-
-
-var n1 = 1;
-var n2 = 2;
-
-var soma = n1 + n2;
-Console.WriteLine(soma);
-
-var subtracao = n1 - n2;
-Console.WriteLine(subtracao);
-
-var mutiplicacao = n1 * n2;
-Console.WriteLine(mutiplicacao);
-
-var divisao = n2 / n1;
-Console.WriteLine(divisao);
-
-
-
-var n1 = 1;
-var n2 = 2;
-
-bool igual = n1 == n2;
-Console.WriteLine(igual);
-
-bool maior = n1 > n2;
-Console.WriteLine(igual);
-
-bool menor = n1 < n2;
-Console.WriteLine(menor);
-
-bool maiorOuIgual = n1 >= n2;
-Console.WriteLine(maiorOuIgual);
-
-bool menorOuIgual = n1 <= n2;
-Console.WriteLine(menorOuIgual);
-
-bool diferente = n1 != n2;
-Console.WriteLine(diferente);
-
-
-
-var n1 = 1;
-var n2 = 2;
-
-// && e
-bool valido = n1 > n2 && 8 > 9;
-Console.WriteLine(valido);
-
-// || ou
-bool valido2 = n1 > n2 || 8 > 9;
-Console.WriteLine(valido2);
-
-// ! não
-bool valido3 = !(n2 > 10);
-Console.WriteLine(valido3);
-*/
-/*
-bool ativo = true;
-string status = ativo == true ? "Cadastro Ativo": "Cadastro inativo";
-Console.WriteLine(status);
-
-string status2 = ativo != true ? "Cadastro Ativo": "Cadastro inativo";
-Console.WriteLine(status2);
-*/
-/*
-string NomeCompleto()
+﻿internal class Program
 {
-    string Nome1 = "Orlando";
+    private static void Main(string[] args)
+    {
+            //Heranca();
+            //AulaClasses();
+            //SomenteLeitura();
+            //AulaClasseAbstrata();
+            //Conversores();
+            //AulaTryParse();
+            //TrabalhandoComString();
+            //TrabalhandoComDatas();
+            //TrabalhandoComErros();
+            //TrabalhandoComArquivo();
+            TrabalhandoComLinq();
+    }
 
-    string Nome2 = "Oliveira";
+    private static void TrabalhandoComLinq()
+    {
+        var trabalhandoComArquivo = new Modulo12.TrabalandoComLinq();
+        trabalhandoComArquivo.AulaFirstEFirstOrDefault();
 
-    return Nome1 + " " + Nome2;
+    }
+private static void TrabalhandoComArquivo()
+{
+    var trabalhandoComArquivo = new Modulo11.TrabalandoComArquivos();
+    trabalhandoComArquivo.AulaExcluidoArquivo();
+
+}
+private static void TrabalhandoComErros()
+{
+    var trabalhandoComErro = new Modulo10.TratamentoDeErros();
+    trabalhandoComErro.AularatandoExeption();
+
 }
 
-var Nome = NomeCompleto();
-
-Console.WriteLine(Nome);
-*/
-/*
-int SomaValores()
+private static void TrabalhandoComDatas()
 {
-    int Valor1 = 1;
-    int Valor2 = 6;    
-
-    return Valor1 + Valor2;
+    var trabalhandoComDatas = new Modulo9.TrabalhandoComDatas();
+    trabalhandoComDatas.AulaTimeOnly();
 }
 
-var Soma = SomaValores();
-Console.WriteLine(Soma);
-*/
 
-/*
-int SomaValores (int a, int b)
+private static void TrabalhandoComString()
 {
-    return a + b;
+    var trabalhandoComStrings = new Modulo8.TrabalhandoComString();
+    //trabalhandoComStrings.ConverterParaLetrasMinusculas();
+    //trabalhandoComStrings.AulaSubstring();
+    //trabalhandoComStrings.AulaRanger();
+    //trabalhandoComStrings.AulaContains();
+    //trabalhandoComStrings.AulaTrim();
+    //trabalhandoComStrings.AulaStartWithEndsWith();
+    //trabalhandoComStrings.AulaReplace();
+    //trabalhandoComStrings.AulaLength();
 }
 
-var Soma =  SomaValores(10,5);
-Console.WriteLine(Soma);
-*/
-
-
-string NomeIdade(string nome, int idade)
+public static void AulaTryParse()
 {
-    return "Meu nome é " + nome + " e minha idade é " + idade;
+    //var numero = "111";
+    var numero = "asd";
+
+    if(int.TryParse(numero, out int numeroConvertido))
+    {
+        Console.WriteLine("Numero foi convertido com sucesso!");
+    }
+
+    Console.WriteLine(numeroConvertido);
 }
 
-var NM = NomeIdade("Orlando Santos de Oliveira",39);
-Console.WriteLine(NM);
+private static void Conversores()
+{
+    var conversores = new Conversores.Conversor();
+    conversores.ConvertAndParse();
+}
+
+    private static void AulaClasses()
+        {
+            var soma = Cadastro.Calculos.SomaNumero(1, 3);
+            Console.WriteLine(soma);
+
+            var produto = new Cadastro.Produto();
+            produto.SetId(1);
+            produto.Descricao = "Teclado";
+
+
+            Console.WriteLine("Id = " + produto.GetId());
+            produto.ImprimirDescricao();
+        }
+
+    private static void SomenteLeitura()
+        {
+            var leitura = new Cadastro.Produto();
+            //leitura.Estoque = 1; não é possivel atribuir pq é apenas leitura
+
+            Console.WriteLine(leitura.Estoque);
+
+        }
+    
+    private static void Heranca()
+    {
+        var pessoaFiseica = new Cadastro.PessoaFisica();
+        pessoaFiseica.Cep = "07143-450";
+        pessoaFiseica.Cidade = "Guarulhos";
+        pessoaFiseica.Endereco = "Rua munhos melo";
+        pessoaFiseica.Id = 1;
+
+        pessoaFiseica.ImprimirDados();
+    }
+
+         private static void AulaClasseAbstrata()
+         {
+             var cachorro = new Cadastro.Cachorro(); 
+             cachorro.Nome = "Dog"; 
+             cachorro.ImprimirDados();
+             
+         }
+
+         private static void AulaClasseSelada()
+         {
+               /*var configuracao = new Cadastro.Configuracao();
+               configuracao.Host = "localhost";
+               */
+               var configuracao = new Cadastro.Configuracao
+               {
+                  Host = "localhost"
+               };
+
+               Console.WriteLine(configuracao.Host);
+
+         }
+
+}
